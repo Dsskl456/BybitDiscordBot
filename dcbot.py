@@ -14,7 +14,7 @@ async def on_ready():
     await channel.send("Hello, im ready to work!")
     chceck_rsi.start()
 
-@tasks.loop(seconds=10)
+@tasks.loop(seconds=1)
 async def chceck_rsi():
     rsi = Bybitcollect.calculate_rsi()
     if(rsi > 70 or rsi < 30):
